@@ -2,7 +2,7 @@
 
 /**
 *main - prints Dors's quote
-*Return: 0 if properly, non zero otherwise
+*Return: 1 if properly, zero otherwise
 */
 int main(void)
 {
