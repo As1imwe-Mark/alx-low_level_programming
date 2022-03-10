@@ -8,8 +8,8 @@
 *
 *Return: Always 0 (success)
 */
-int main (void)
+int main(void)
 {
-         printf("with proper grammer, but the outcome is apiece of art,");
-         return(0);
+         printf("with proper grammer, but the outcome is a piece of art,");
+         return (0);
 }
