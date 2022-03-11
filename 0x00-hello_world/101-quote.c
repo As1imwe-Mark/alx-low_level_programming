@@ -2,10 +2,10 @@
 
 /**
 *main - prints Dors's quote
-*Return: 0 if properly, non zero otherwise
+*Return: 1 if properly, zero otherwise
 */
-int main(void)
+int main()
 {
-write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
-return (0);
+fwrite(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+return (1);
 }
