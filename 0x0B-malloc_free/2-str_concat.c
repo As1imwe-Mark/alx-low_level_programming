@@ -1,65 +1,43 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
- * _strlen - Swaps integers wih pointers.
+ * str_concat - concatenates 2 strings
  *
- * @s: is a pointer to a char
+ * @s1: first string
+ * @s2: string to add to end of of first string
  *
- * Return: Always 0.
+ * Return: pointer to newly allocated string concatenation
  */
-int _strlen(char *s)
-{
-int i = 0;
-
-while (*(s + i) != '\0')
-	i++;
-
-return (i);
-}
-
-
-/**
- * str_concat - Concatenates 2 strings..
- *
- * @s1: First string.
- * @s2: Second string.
- *
- * Return: Returns the created array.
-**/
-
 char *str_concat(char *s1, char *s2)
 {
+	unsigned int size1 = 0, size2 = 0;
+	char *ptr, *ret;
 
-int i, j, size1, size2, totSize;
-char *ar;
+	ptr = s1;
+	if (s1)
+		while (*ptr++)
+			size1++;
+	else
+		s1 = "";
 
-if (s1 == NULL)
-	s1 = "";
-if (s2 == NULL)
-	s2 = "";
+	ptr = s2;
+	if (s2)
+		while (*ptr++)
+			size2++;
+	else
+		s2 = "";
 
-size1 = _strlen(s1);
-size2 = _strlen(s2);
-totSize = (size1 + size2)+1;
-ar = malloc(totSize *sizeof(char));
+	ret = malloc(size1 + size2 + 1);
+	if (!ret)
+		return (NULL);
 
-if (ar == NULL)
-	return (NULL);
-else
-{
-for (i = 0; i < size1; i++)
-	ar[i] = s1[i];
+	ptr = ret;
+	while (*s1)
+		*ptr++ = *s1++;
+	while (*s2)
+		*ptr++ = *s2++;
+	*ptr = 0;
 
-for (j = 0; j < size2; j++)
-{
-	ar[i] = s2[j];
-	i++;
+	return (ret);
 }
-ar[i + 1] = '\0';
-return (ar);
-}
-
-}
-
